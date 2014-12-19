@@ -7,7 +7,7 @@ static const int LCD_HEART = 1;
 static const int LCD_SMILEY = 2;
 
 // simbol bytes
-byte LCD_BYTE_HEART[8] = {
+static byte LCD_BYTE_HEART[8] = {
   0b00000,
   0b01010,
   0b11111,
@@ -18,7 +18,7 @@ byte LCD_BYTE_HEART[8] = {
   0b00000
 };
 
-byte LCD_BYTE_SMILEY[8] = {
+static byte  LCD_BYTE_SMILEY[8] = {
   0b00000,
   0b00000,
   0b01010,

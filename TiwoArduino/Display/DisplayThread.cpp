@@ -14,7 +14,7 @@ DisplayThread::DisplayThread(int id) {
 }
 
 bool DisplayThread::loop(){
-	display->displayText("Hello");
+	display->writeRow(0, "Hello...");
 	sleep_milli(2000);
 	return true;
 }
