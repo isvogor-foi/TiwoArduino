@@ -4,6 +4,7 @@
 #include "MotorDriver/MotorThread.h"
 #include "Display/DisplayThread.h"
 #include "Display/Symbols.h"
+#include "Serial/SerialThread.h"
 
 void setup()
 {
@@ -12,6 +13,8 @@ void setup()
 
 	main_thread_list->add_thread(new MotorThread(MOTOR_THREAD_ID));
 	//main_thread_list->add_thread(new DisplayThread(DISPLAY_THREAD_ID));
+	main_thread_list->add_thread(new SerialThread(SERIAL_THREAD_ID));
+
 	Display *display = new Display();
 	display->writeRow(0, "REC: FWD | 14.V");
 	display->writeRow(1, "[ OBJ DETEC. ]");

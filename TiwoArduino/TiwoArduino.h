@@ -12,6 +12,7 @@
 //thread ids
 static int const MOTOR_THREAD_ID = 1;
 static int const DISPLAY_THREAD_ID = 2;
+static int const SERIAL_THREAD_ID = 3;
 
 //end of add your includes here
 #ifdef __cplusplus
