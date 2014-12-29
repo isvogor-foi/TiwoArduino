@@ -6,14 +6,17 @@
 #include "Display/Symbols.h"
 #include "Serial/SerialThread.h"
 
+MotorThread *motorThread = new MotorThread(MOTOR_THREAD_ID);
+SerialThread *serialThread = new SerialThread(SERIAL_THREAD_ID, motorThread);
+
 void setup()
 {
 // Add your initialization code here
 	Serial.begin(9600);
 
-	main_thread_list->add_thread(new MotorThread(MOTOR_THREAD_ID));
+	main_thread_list->add_thread(motorThread);
+	main_thread_list->add_thread(serialThread);
 	//main_thread_list->add_thread(new DisplayThread(DISPLAY_THREAD_ID));
-	main_thread_list->add_thread(new SerialThread(SERIAL_THREAD_ID));
 
 	/*
 	Display *display = new Display();

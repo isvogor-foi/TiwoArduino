@@ -13,6 +13,7 @@ MotorThread::MotorThread(int id) {
 	this->id = id;
 	this->motor = new Motor();
 	this->motor->setSpeed(500);
+
 	this->setMovement(STOP);
 }
 

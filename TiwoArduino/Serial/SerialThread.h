@@ -10,14 +10,17 @@
 
 #include "Arduino.h"
 #include "mthread.h"
+#include "MotorDriver/MotorThread.h"
 
 class SerialThread : public Thread{
 public:
-	SerialThread(int id);
+	SerialThread(int id, MotorThread *motorThread);
 	void read();
 	bool loop();
+	void evaluateCommand(char command[20]);
 private:
 	int id;
+	MotorThread *motorThread;
 };
 
 #endif /* SERIAL_SERIALTHREAD_H_ */
