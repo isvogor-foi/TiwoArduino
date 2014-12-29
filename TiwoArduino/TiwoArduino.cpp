@@ -15,8 +15,10 @@ void setup()
 	//main_thread_list->add_thread(new DisplayThread(DISPLAY_THREAD_ID));
 	main_thread_list->add_thread(new SerialThread(SERIAL_THREAD_ID));
 
+	/*
 	Display *display = new Display();
 	display->writeRow(0, "REC: FWD | 14.V");
 	display->writeRow(1, "[ OBJ DETEC. ]");
 	display->writeSymbol(1, 15, LCD_HEART);
+	*/
 }

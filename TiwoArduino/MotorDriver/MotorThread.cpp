@@ -12,15 +12,37 @@
 MotorThread::MotorThread(int id) {
 	this->id = id;
 	this->motor = new Motor();
-
+	this->motor->setSpeed(500);
+	this->setMovement(STOP);
 }
 
 bool MotorThread::loop(){
 
-	Serial.print("Hello from thread -> ");
-	this->motor->goForward();
-	sleep_milli(1000);
+	switch(currentMovement){
+		case FORWARD:
+			this->motor->goForward();
+			break;
+		case BACKWARD:
+			this->motor->goBackward();
+			break;
+		case LEFT:
+			this->motor->goLeft();
+			break;
+		case RIGHT:
+			this->motor->goRight();
+			break;
+		case STOP:
+			this->motor->stop();
+	}
+
+	if(currentMovement != STOP){
+		this->motor->runMotors();
+	}
 
 	return true;
+}
+
+void MotorThread::setMovement(Movement newMovement){
+	this->currentMovement = newMovement;
 }
 
