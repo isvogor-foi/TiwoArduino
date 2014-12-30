@@ -12,7 +12,7 @@
 MotorThread::MotorThread(int id) {
 	this->id = id;
 	this->motor = new Motor();
-	this->motor->setSpeed(500);
+	//this->motor->setSpeed(500);
 
 	this->setMovement(STOP);
 }
@@ -37,6 +37,8 @@ bool MotorThread::loop(){
 	}
 
 	if(currentMovement != STOP){
+		//Serial.println(currentMovement);
+		this->motor->setSpeed(500);
 		this->motor->runMotors();
 	}
 

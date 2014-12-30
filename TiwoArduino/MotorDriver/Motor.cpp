@@ -43,7 +43,7 @@ void Motor::goLeft(){
 }
 
 void Motor::goRight(){
-	this->left_stepper->setSpeed(this->current_speed);
+	this->left_stepper->setSpeed(-this->current_speed);
 	this->right_stepper->setSpeed(-this->current_speed);
 }
 

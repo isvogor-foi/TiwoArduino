@@ -51,25 +51,20 @@ void SerialThread::read() {
 
 void SerialThread::evaluateCommand(char command[20]){
 	if(strcmp(command, "FORWARD") == 0){
-		Serial.println("FORWARD");
 		this->motorThread->setMovement(FORWARD);
 	}
 	if(strcmp(command, "BACKWARD") == 0){
-		Serial.println("BACKWARD");
 		this->motorThread->setMovement(BACKWARD);
 	}
 	if(strcmp(command, "LEFT") == 0){
-		Serial.println("LEFT");
 		this->motorThread->setMovement(LEFT);
 
 	}
 	if(strcmp(command, "RIGHT") == 0){
-		Serial.println("RIGHT");
 		this->motorThread->setMovement(RIGHT);
 
 	}
 	if(strcmp(command, "STOP") == 0){
-		Serial.println("STOP");
 		this->motorThread->setMovement(STOP);
 
 	}
