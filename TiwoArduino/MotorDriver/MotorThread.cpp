@@ -38,7 +38,7 @@ bool MotorThread::loop(){
 
 	if(currentMovement != STOP){
 		//Serial.println(currentMovement);
-		this->motor->setSpeed(500);
+		this->motor->setSpeed(DEF_SPEED);
 		this->motor->runMotors();
 	}
 

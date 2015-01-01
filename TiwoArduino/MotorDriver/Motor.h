@@ -18,9 +18,9 @@ static int const DIR_RIGHT = 13;
 static int const PUL_RIGHT = 12;
 
 // speeds
-static int const MAX_SPEED = 850; // max speed
+static int const MAX_SPEED = 1700;//850; // max speed (maybe *2 because of halfstep)
 static int const DEF_ACCEL = 300; // default acceleration
-static int const DEF_SPEED = 300; // default speed
+static int const DEF_SPEED = 600; // default speed
 
 class Motor {
 public:

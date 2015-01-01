@@ -38,13 +38,13 @@ void Motor::goBackward(){
 }
 
 void Motor::goLeft(){
-	this->left_stepper->setSpeed(this->current_speed);
-	this->right_stepper->setSpeed(this->current_speed);
+	this->left_stepper->setSpeed(this->current_speed * 1);
+	this->right_stepper->setSpeed(this->current_speed * 1.5);
 }
 
 void Motor::goRight(){
-	this->left_stepper->setSpeed(-this->current_speed);
-	this->right_stepper->setSpeed(-this->current_speed);
+	this->left_stepper->setSpeed(-this->current_speed * 1.5);
+	this->right_stepper->setSpeed(-this->current_speed * 1);
 }
 
 void Motor::stop(){
